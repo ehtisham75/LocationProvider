@@ -64,40 +64,7 @@ const Home = () => {
         })
             .then(res => console.log("=== share loc Res ===", res))
             .catch(error => console.log("==== share loc catch err ====", error));
-
-
-        // const db = getFirestore();
-        // try {
-        //     const docRef = await addDoc(collection(db, 'sharedLocations'), {
-        //         address: addressString,
-        //         latitude: latitude,
-        //         longitude: longitude,
-        //         timestamp: new Date().toISOString(),
-        //     });
-
-        //     console.log('Location stored in Firestore with ID: ', docRef.id);
-        // } catch (error) {
-        //     console.log('Error storing location in Firestore: ', error);
-        // }
     };
-
-    // const retrieveSharedLocations = async () => {
-    //     const db = getFirestore();
-
-    //     try {
-    //         const querySnapshot = await getDocs(collection(db, 'sharedLocations'));
-
-    //         querySnapshot.forEach(doc => {
-    //             const location = doc.data();
-    //             console.log('Address:', location.address);
-    //             console.log('Latitude:', location.latitude);
-    //             console.log('Longitude:', location.longitude);
-    //             console.log('Timestamp:', location.timestamp);
-    //         });
-    //     } catch (error) {
-    //         console.log('Error retrieving shared locations: ', error);
-    //     }
-    // };
 
     const toggleLocationPermission = () => {
         setLocationPermissionEnabled(!locationPermissionEnabled);
