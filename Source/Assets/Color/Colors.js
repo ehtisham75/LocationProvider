@@ -22,5 +22,4 @@ export const Colors = {
     LIGHT_GRAY: '#e3e5e8',
     TRANSPARENT: 'transparent',
     WHITE_HEX_COLOR: '#ffffffE6',
-    GRADIENT_2ND: "#0eb79d",
 }

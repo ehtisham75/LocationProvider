@@ -13,7 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const GetRoutes = (route) => {
     const routeName = getFocusedRouteNameFromRoute(route)
     console.log("========&&&&&&&&& ", routeName)
-    if (routeName?.includes("ShortVideos")) {
+    if (routeName?.includes("")) {
         return "none";
     }
     return "flex";
@@ -43,8 +43,6 @@ const BottamTab = () => {
                                 color: focused ? Colors.WHITE_TEXT_COLOR : Colors.GRAY,
                                 top: -5,
                                 fontWeight: '700',
-                                // fontFamily: "JosefinSans-Medium",
-                                // backgroundColor: 'plum',
                             }}>{focused ? "Home" : "Home"}</Text>)
                     },
                     tabBarIcon: ({ focused }) => {
@@ -71,8 +69,6 @@ const BottamTab = () => {
                                 color: focused ? Colors.WHITE_TEXT_COLOR : Colors.GRAY,
                                 top: -5,
                                 fontWeight: '700',
-                                // fontFamily: "JosefinSans-Medium",
-                                // backgroundColor: 'plum',
                             }}>{focused ? "Location" : "Location"}</Text>)
                     },
                     tabBarIcon: ({ focused }) => {

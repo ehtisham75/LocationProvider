@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StatusBar, Button, TouchableOpacity, Image, PermissionsAndroid, Switch } from 'react-native'
 import Geolocation from 'react-native-geolocation-service';
 // import Geocoder from 'react-native-geocoding';
-// import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import Share from 'react-native-share';
 import { Colors } from '../../Assets/Color/Colors'
 
