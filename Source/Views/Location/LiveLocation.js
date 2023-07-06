@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StatusBar, TouchableOpacity, Image, PermissionsAndroid, ActivityIndicator } from 'react-native'
+import {
+    View, Text, StatusBar, TouchableOpacity, Image,
+    PermissionsAndroid, ActivityIndicator, StyleSheet
+} from 'react-native'
 import { Colors } from '../../Assets/Color/Colors'
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
@@ -32,17 +35,21 @@ const LiveLocation = () => {
                 setCurrentLocation({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
                 });
             },
             error => {
-                console.log('Error getting current location:', error);
+                console.log('Error getting current location:', error.message);
             },
+            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
         );
     };
 
     return (
         <View style={{
             flex: 1,
+            alignItems: 'center',
         }}>
             <StatusBar
                 backgroundColor={Colors.SECONDARY_COLOR}
@@ -54,20 +61,15 @@ const LiveLocation = () => {
                 <View
                     style={{
                         width: "90%",
-                        height: 400,
+                        height: "90%",
                         alignSelf: 'center',
                         borderRadius: 10,
                         overflow: 'hidden',
                         marginTop: 20,
                     }}>
                     <MapView
-                        style={{ flex: 1 }}
-                        initialRegion={{
-                            latitude: currentLocation.latitude,
-                            longitude: currentLocation.longitude,
-                            latitudeDelta: 0.0922,
-                            longitudeDelta: 0.0421,
-                        }}
+                        style={{ flex: 1, ...StyleSheet.absoluteFillObject, }}
+                        initialRegion={currentLocation}
                         showsUserLocation={true}
                         showsMyLocationButton={true}
                         followsUserLocation={true}
